@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Movie Ticket Booking</title>
+</head>
+<body>
+
+  <div id="left">
+    <ul id="films"></ul>
+  </div>
+
+  <div id="right">
+    <div id="movie-details">
+      <!-- Movie details will be populated here -->
+      <img id="movie-poster" src="amazing spider man.png" alt="amazing spider man.png" width="200">
+      <h2>Amazing Spiderman 3</h2>
+      <p><strong>Runtime:</strong> <span id="movie-runtime"></span> 1hr 59min</p>
+      <p><strong>Showtime:</strong> <span id="movie-showtime"></span>2:45pm</p>
+      <p><strong>Available Tickets:</strong> 20<span id="available-tickets"></span></p>
+      <button id="buy-ticket">Buy Ticket</button>
+      <img id="movie-poster" src="free guy.png" alt="free guy.png" width="200">
+      <h2>Free Guy</h2>
+      <p><strong>Runtime:</strong> <span id="movie-runtime"></span> 1hr 30min</p>
+      <p><strong>Showtime:</strong> <span id="movie-showtime"></span>5:50pm</p>
+      <p><strong>Available Tickets:</strong> 15<span id="available-tickets"></span></p>
+      <button id="buy-ticket">Buy Ticket</button>
+      <img id="movie-poster" src="Uncharted.png" alt="Uncharted.png" width="200">
+      <h2></h2>
+      <p><strong>Runtime:</strong> <span id="movie-runtime"></span> 2hr 20min</p>
+      <p><strong>Showtime:</strong> <span id="movie-showtime"></span>3:00pm</p>
+      <p><strong>Available Tickets:</strong> 0<span id="available-tickets"></span></p>
+      <button id="buy-ticket">sold out</button>
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+
+  <script>
+    function buyTicket() {
+      var availableTicketsElement = document.getElementById('available-tickets');
+      var availableTickets = parseInt(availableTicketsElement.innerText);
+
+      if (availableTickets > 0) {
+        // Decrease the number of available tickets
+        availableTickets -= 1;
+        availableTicketsElement.innerText = availableTickets;
+
+        // Perform any additional actions related to buying a ticket here
+        alert('Ticket purchased successfully!');
+      } else {
+        alert('Sorry, this showing is sold out!');
+      }
+    }
+  </script>
+</body>
+</html>
